@@ -18,13 +18,13 @@ const getTodos = (resource) => {
 };
 
 getTodos("todos/lukas.json").then(data => {
-    console.log("Promise 1 resolved: ", data);
+    console.log("Promise 1 resolved:", data);
     return getTodos("todos/honza.json");
 }).then(data => {
-    console.log("Promise 2 resolved", data);
+    console.log("Promise 2 resolved:", data);
     return getTodos("todos/tomas.json");
 }).then(data => {
-    console.log("Promise 3 resolved", data);
+    console.log("Promise 3 resolved:", data);
 }).catch(err => {
     console.log("Promise rejected: ", err);
 });
