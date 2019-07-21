@@ -6,9 +6,11 @@ const getTodos = (resource) => {
         request.addEventListener("readystatechange", () => {
             if (request.readyState === 4 && request.status === 200) {
                 const data = JSON.parse(request.responseText);
-                resolve(data);
+                //console.log(undefined, data);    // způsob pomocí Callbacku
+                resolve(data);                     // způsob pomocí Promises
             } else if (request.readyState === 4) {
-                reject("Error getting resource");
+                //console.log('Could not fetch data', data);  // způsob pomocí Callbacku 
+                reject("Error getting resource");             // způsob pomocí Promises
             }
         });
         request.open("GET", resource);
