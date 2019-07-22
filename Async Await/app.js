@@ -11,4 +11,4 @@ const getTodos = async resource => {
 
 getTodos('../todos/lukas.json')
     .then(data => console.log(data))
-    .catch(err => CSSConditionRule.log(err));
+    .catch(err => console.log(err.message));
